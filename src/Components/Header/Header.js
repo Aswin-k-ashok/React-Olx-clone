@@ -6,7 +6,7 @@ import Search from '../../assets/Search';
 import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
-import { AuthContext, FirebaseContext } from '../../store/FirebaseContext';
+import { AuthContext, FirebaseContext } from '../../store/Context';
 function Header() {
   const history = useHistory()
   const{user} = useContext(AuthContext)
@@ -14,7 +14,9 @@ function Header() {
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
-        <div className="brandName">
+        <div className="brandName" onClick={()=>{
+          history.push('/')
+        }}>
           <OlxLogo></OlxLogo>
         </div>
         <div className="placeSearch">
@@ -46,7 +48,9 @@ function Header() {
           history.push ('/login')
         }} >Logout</span>}
 
-        <div className="sellMenu">
+        <div className="sellMenu" onClick={()=>{
+          history.push('/create')
+        }}>
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
