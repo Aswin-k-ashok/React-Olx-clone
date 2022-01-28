@@ -52,7 +52,9 @@ function Login() {
           <br />
           <button type='submit'>Login</button>
         </form>
-        <a>Signup</a>
+        <a onClick={()=>{
+          history.push('/signup')
+        }}>Signup</a>
       </div>
     </div>
   );
